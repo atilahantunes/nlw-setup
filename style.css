@@ -1,0 +1,118 @@
+* {
+  margin: 0; /* Margem 0 para todo o codigo */
+  padding: 0; /* Preenchimento 0 para todo o codigo */
+  box-sizing: border-box; /* Ajusta a borda ao tamanho do conteúdo */
+}
+
+body {
+  background-color: #09090a; /* Definindo cor de fundo para tudo*/
+  color: white; /* Definindo a cor do texto para tudo */
+
+  height: 100vh; /*  */
+}
+
+header {
+  display: flex; /* O modo de visualização é inline (linha lado a lado) e flex é flexivel */
+  align-items: center; /* Alinhando os itens do header ao centro (só funciona com display flex)*/
+  justify-content: space-between; /* Ajustando os itens a largura do header com espaço entre eles */
+
+  padding: 48px;
+  /* border: 1px solid red;*/
+  /* Para facilitar a visualização */
+
+  position: fixed;
+  width: 100%;
+  background-color: #09090a;
+}
+
+button {
+  padding: 16px 24px; /* Preenchimento em top e botton 16px, right e left 24px */
+  border-radius: 8px; /* Arredondamento de borda */
+  border: 1px solid #8b5cf6; /* Borda de 1px solida (dashed-traços) com a cor definida */
+  background-color: transparent;
+  color: white;
+
+  display: flex; /* O modo de visualização é inline (linha lado a lado) e flex é flexivel */
+  align-items: center; /* Alinhando os itens do button ao centro (só funciona com display flex)*/
+  gap: 12px; /* Espaço entre os itens (Usado somente quando display flex) */
+
+  font-family: "Inter"; /* Após copiar o codido no fonts.google.com e colar no html, definindo ela*/
+  font-weight: 600; /* Peso 600 (Espessura) */
+  font-size: 16px; /* Tamanho 16px */
+  line-height: 125%; /* Altura de linha 125% */
+}
+
+#form-habits {
+  display: flex;
+  padding: 182px 48px 48px; /* Primeiro em cima, segundo laterais e terceiro em baixo */
+  /* padding: 0 48px; -- Primeiro valor em cima/baixo, segundo laterais. */
+  width: fit-content; /* fit-content: encaixe o conteudo na largura. */
+}
+
+.habits {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.habit {
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days {
+  display: flex;
+  gap: 48px;
+  margin-left: 32px;
+}
+
+.day {
+  display: flex;
+  flex-direction: column; /* Mudando a direção para coluna(vertical) */
+  gap: 24px;
+}
+
+.day div {
+  margin-bottom: 8px;
+
+  font-family: "Roboto Mono";
+  font-size: 20px;
+  line-height: 125%;
+
+  color: #a1a1aa;
+  text-align: center;
+}
+
+input {
+  appearance: none; /* Quando eu tiro nesse caso (checkbox) consigo usar as outras propriedades */
+  -webkit-appearance: none; /* Alguns navegadores precisam declarar o -webkit- antes para entender */
+
+  width: 64px;
+  height: 64px;
+
+  border: 2px solid #27272a;
+  border-radius: 8px;
+
+  background: #18181b;
+}
+
+/*pseudo-selector (usando : e o valor depois) ex: input:checked*/
+input:checked {
+  background: #8b5cf6;
+  border: 2px solid #a78bfa;
+}
+
+/* Responsividade em CSS */
+/* chamada at rule, regra de css*/
+/* Se o meu dispositivo tiver de 0 a até no maximo 570pixels de largura na tela, aplico isso aqui */
+@media (max-width: 570px) {
+  button div {
+    display: none; /* Não mostrar o texto do botão */
+  }
+}
